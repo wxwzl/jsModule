@@ -20,7 +20,6 @@ function TaskTimer(){
 TaskTimer.prototype = {
     setTimer:function(time,method,context){
 		this.clearTimer();
-		let me=this;
 		if(time===undefined)time=0;
 		this.timeOutId =setTimeout(function(){
 			method.call(context);
