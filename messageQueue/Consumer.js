@@ -17,7 +17,7 @@ Consumer.prototype={
         if(this._producer){
             let msg = this._producer.fetchMsg();
             if(msg){
-                this.consumers.forEach(function(method){
+                this._consumeMethod.forEach(function(method){
                     method.call(this,msg);
                 });
                 return this.consumeMsg();
