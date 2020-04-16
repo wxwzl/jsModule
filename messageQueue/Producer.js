@@ -30,7 +30,7 @@ let TaskTimer = require("../TaskTimer");
      * @param {*} msg 
      */
     putMsg:function(msg){
-        this.msgQueue.addMsg();
+        this.msgQueue.addMsg(msg);
         TaskTimer.setTimer(this.cacheTimeToPMsg,function(){
             this.produceMsg();
         },this);
