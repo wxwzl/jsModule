@@ -1,7 +1,3 @@
-/**写在前头，今晚面试问了个并发的问题，忘记回答消息队列。。。当时饿晕了吗？？糗啊啊啊啊
- * 为了印象深刻，把之前封装在websocket组件里的消息队列单独整理出来做个简单的吧，好吧，又要应用一次观察者模式了。。
- * 这真是个好用的设计模式。。。哈哈哈。
- */
 
 let TaskTimer = require("../TaskTimer");
  /**
@@ -34,7 +30,7 @@ let TaskTimer = require("../TaskTimer");
      * @param {*} msg 
      */
     putMsg:function(msg){
-        this.addMsg();
+        this.msgQueue.addMsg();
         TaskTimer.setTimer(this.cacheTimeToPMsg,function(){
             this.produceMsg();
         },this);
@@ -59,6 +55,6 @@ let TaskTimer = require("../TaskTimer");
      * 消费者主动来消费消息接口
      */
     fetchMsg:function(){
-        return this.removeMsg();
+        return this.msgQueue.removeMsg();
     } 
  }
