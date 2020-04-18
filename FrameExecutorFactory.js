@@ -61,16 +61,16 @@ FrameExecutor.prototype = {
     }
 };
 
-function FrameExecutorFactTory() {
+function FrameExecutorFactory() {
 
 }
 
-FrameExecutorFactTory.prototype = {
-    constructor: FrameExecutorFactTory,
+FrameExecutorFactory.prototype = {
+    constructor: FrameExecutorFactory,
     getFrameExecutor: function (array, method, context, config) {
         let iterator = iteratorGenerator.getIterator(array, method, context);
         return new FrameExecutor(iterator, config);
     }
 }
-let frameExecutorFactTory = new FrameExecutorFactTory();
-module.exports = frameExecutorFactTory;
+let frameExecutorFactory = new FrameExecutorFactory();
+module.exports = frameExecutorFactory;
