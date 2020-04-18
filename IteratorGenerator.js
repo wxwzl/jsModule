@@ -8,7 +8,7 @@ Iterator.prototype = {
     constructor: Iterator,
     next: function () {
         let key = this.keys[this.index++];
-        if (this.handler) {
+        if (key&&this.handler) {
             this.handler.call(this.context,key,this);
         }
         return key;

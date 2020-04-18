@@ -34,3 +34,5 @@ Stack.prototype = {
 		return array;
 	}
 };
+
+module.exports = Stack;

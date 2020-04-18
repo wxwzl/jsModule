@@ -22,6 +22,7 @@ let TaskTimer = require("../TaskTimer");
     this.consumers = [];
     /**广播可消费事件的节流时间 */
     this.cacheTimeToPMsg = 1000;//milisecond;
+    this._timer = new TaskTimer();
  };
  Producer.prototype={
 
@@ -31,9 +32,9 @@ let TaskTimer = require("../TaskTimer");
      */
     putMsg:function(msg){
         this.msgQueue.addMsg(msg);
-        TaskTimer.setTimer(this.cacheTimeToPMsg,function(){
+        this._timer.setTimer(function(){
             this.produceMsg();
-        },this);
+        },this.cacheTimeToPMsg,this);
     },
     /**
      * 向消费者广播可消费消息，这里简单直接拿消费者对象通知有消息可消费事件,这个传播消息的方式有很多，

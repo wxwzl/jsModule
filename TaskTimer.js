@@ -2,7 +2,7 @@ function TaskTimer(){
     this.timeOutId = null;//定时任务的id不对外
 };
 TaskTimer.prototype = {
-    setTimer:function(time,method,context){
+    setTimer:function(method,time,context){
 		this.clearTimer();
 		if(time===undefined)time=0;
 		this.timeOutId =setTimeout(function(){
@@ -23,3 +23,4 @@ TaskTimer.prototype = {
 		}
 	}
 };
+module.exports = TaskTimer;
