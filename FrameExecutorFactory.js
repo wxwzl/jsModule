@@ -14,9 +14,9 @@ let iteratorGenerator = require("./IteratorGenerator");
 
 let TaskTimer = require("./TaskTimer");
 
-function FrameExecutor(iteratorGenerator, config) {
+function FrameExecutor(iterator, config) {
     this.frameTime = 60; //定义每帧的毫秒数
-    this.iteratorGenerator = iteratorGenerator;
+    this.iterator = iterator;
     if (config && config.frameTime) {
         this.frameTime = config.frameTime;
     }
@@ -32,9 +32,9 @@ FrameExecutor.prototype = {
     execute: function () {
         this.status = this.statusMap.run;
         let lastTimeStamp = new Date().getTime();
-        iterator.next();
+        this.iterator.next();
         let nowTimeStamp = null;
-        while (iterator.hasNext()) {
+        while (this.iterator.hasNext()) {
             if (this.status == this.statusMap.pause) {
                 return;
             }
@@ -43,7 +43,7 @@ FrameExecutor.prototype = {
                 this._nextTick(this.execute, this);
                 break;
             } else {
-                iterator.next();
+                this.iterator.next();
             }
         }
     },
