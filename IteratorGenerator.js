@@ -10,11 +10,13 @@ Iterator.prototype = {
         let key = this.keys[this.index++];
         if (key&&this.handler) {
             this.handler.call(this.context,key,this);
+        }else{
+            console.log(key);
         }
         return key;
     },
     hasNext: function () {
-        if (this.index + 1 > this.keys.length - 1) {
+        if (this.index > this.keys.length - 1) {
             return false;
         }
         return true;
