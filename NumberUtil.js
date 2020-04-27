@@ -3,7 +3,7 @@ function NumberUtil() {
 };
 NumberUtil.prototype = {
     // 给定两个字符串，返回它们的乘法结果。例如getMulti('2', '3')，函数的输出为'6'。
-    getMutil: function (a, b) {
+    getMulti: function (a, b) {
         const maxlen = 1;
         function strToNumberArray(a) {
             let aArray = [];
