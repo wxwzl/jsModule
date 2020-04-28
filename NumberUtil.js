@@ -4,7 +4,16 @@ function NumberUtil() {
 NumberUtil.prototype = {
     // 给定两个字符串，返回它们的乘法结果。例如getMulti('2', '3')，函数的输出为'6'。
     getMulti: function (a, b) {
-        const maxlen = 5;
+        let astr =a+"";
+        let bstr= b+"";
+        
+    },
+    /**
+     * 整数乘法运算
+     * 给定两个字符串，返回它们的乘法结果。例如getMulti('2', '3')，函数的输出为'6'。
+     */
+    getIntegerMulti:function(a,b){
+        const maxlen = 5;//该值小于等于Number最大存储位数/2-1
 
         function strToNumberArray(a) {
             let aArray = [];
