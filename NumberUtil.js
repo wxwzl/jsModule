@@ -27,7 +27,15 @@ NumberUtil.prototype = {
      * 给定两个字符串，返回它们的乘法结果。例如getMulti('2', '3')，函数的输出为'6'。
      */
     getIntegerMulti: function (a, b) {
+        a=a.replace(/^0+/,"");
+        b=b.replace(/^0+/,"");
+        if(a==""||b==""){
+            return "0";
+        }
         const maxlen = capacity / 2 - 1 > 1 ? Math.floor(capacity / 2 - 1) : 1; //该值小于等于Number最大存储位数/2-1
+        if(a.length<maxlen&&b.length<maxlen){
+            return (Number(a)*Number(b))+"";
+        }
         let aNumArray = strToNumberArray(a, maxlen);
         let bNumArray = strToNumberArray(b, maxlen);
         let maxNumber = Math.pow(10, maxlen);
@@ -64,15 +72,15 @@ NumberUtil.prototype = {
         }
         let arraylen = array.length;
         for (let i = 0; i < arraylen; i++) {
-           if(result.length<i*maxlen){
-            let diff = i*maxlen -result.length;
-            for(let j=0;j<diff;j++){
-                result = "0"+result;
+            if(result.length<i*maxlen){
+             let diff = i*maxlen -result.length;
+             for(let j=0;j<diff;j++){
+                 result = "0"+result;
+             }
             }
-           }
-            result =array[i]+result;
-        }
-        return result;
+             result =array[i]+result;
+         }
+        return result.replace(/^0+/,"");
     },
     /**
      * 整数加法运算
