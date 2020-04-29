@@ -30,7 +30,6 @@ NumberUtil.prototype = {
         const maxlen = capacity / 2 - 1 > 1 ? Math.floor(capacity / 2 - 1) : 1; //该值小于等于Number最大存储位数/2-1
         let aNumArray = strToNumberArray(a, maxlen);
         let bNumArray = strToNumberArray(b, maxlen);
-        let maxlen2 = maxlen * 2;
         let maxNumber = Math.pow(10, maxlen);
         let lenA = aNumArray.length;
         let lenB = bNumArray.length;
