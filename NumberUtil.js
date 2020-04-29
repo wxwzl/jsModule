@@ -1,7 +1,7 @@
 function NumberUtil() {
 
 };
-const capacity = 10;
+const capacity = 16;//Number最大存储位数，大于16会散失精度
 
 function strToNumberArray(a, maxlen) {
     let aArray = [];
@@ -26,7 +26,7 @@ NumberUtil.prototype = {
      * 给定两个字符串，返回它们的乘法结果。例如getMulti('2', '3')，函数的输出为'6'。
      */
     getIntegerMulti: function (a, b) {
-        const maxlen = capacity / 2 - 1 > 1 ? capacity / 2 - 1 : 1; //该值小于等于Number最大存储位数/2-1
+        const maxlen = capacity / 2 - 1 > 1 ? Math.floor(capacity / 2 - 1): 1; //该值小于等于Number最大存储位数/2-1
         let aNumArray = strToNumberArray(a, maxlen);
         let bNumArray = strToNumberArray(b, maxlen);
         let lenA = aNumArray.length;
