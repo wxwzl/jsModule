@@ -78,7 +78,7 @@ class ConditionBuilder {
                 value +=  condition.toString()+seperator;
             }
         }
-        let reg = "("+seperator+"\\s+)$";
+        let reg = "("+seperator+"\\s*)$";
         value = value.replace(new RegExp(reg),"");
         return this.createCondition("", value, "",true);
     }
@@ -94,7 +94,7 @@ class ConditionBuilder {
                 value += " (" + condition.toString() + ") or";
             } 
         }
-        value = value.replace(/(or\s+)$/,"");
+        value = value.replace(/(or\s*)$/,"");
         return this.createCondition("", value, "",true);
     }
 
@@ -117,7 +117,7 @@ class ConditionBuilder {
                 value += " (" + condition.toString() + ") and ";
             }
         }
-        value = value.replace(/(and\s+)$/,"");
+        value = value.replace(/(and\s*)$/,"");
         return this.createCondition("", value, "",true);
     }
     /**
