@@ -1,4 +1,4 @@
-let frameExecutorFactory = require("../FrameExecutorFactory");
+let frameExecutorFactory = require("../src/FrameExecutorFactory");
 let array = [];
 for(let i=0;i<100;i++){
     array.push(i);

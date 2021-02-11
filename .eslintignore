@@ -1,0 +1,7 @@
+/build/
+/mock/
+/dist/
+**/public
+**/package.json
+**/package-lock.json
+**/README.md

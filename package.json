@@ -1,0 +1,35 @@
+{
+  "name": "ts-module",
+  "version": "0.0.1",
+  "description": "a typescript modules",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx prettier --write src/*.js src/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wxwzl/jsModule.git"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "wxwzl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wxwzl/jsModule/issues"
+  },
+  "homepage": "https://github.com/wxwzl/jsModule#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.25",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.5"
+  }
+}
